@@ -41,6 +41,7 @@ function getUsers() {
                 var newElem = document.createElement ("div");
                 newElem.innerHTML = user.name;
                 newElem.setAttribute('data-id', user.id)
+                newElem.setAttribute('data-name', user.name)
                 newElem.classList.add('user')
                 newElem.classList.add('infoBox')
                 var container = document.getElementById ("users");
@@ -53,7 +54,8 @@ function getUsers() {
                 user.addEventListener('click',function (e) {
                     console.log(e.target)
                     let id = e.target.getAttribute('data-id')
-                    createScoreForm()
+                    let name = e.target.getAttribute('data-name')
+                    createScoreForm(id, name)
                 })
             })
         })
