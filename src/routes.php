@@ -82,6 +82,30 @@ WHERE `games`.`id` = :gameId;");
     }
 });
 
+$app->get('/user/score/{userId}/{gameId}', function (Request $request, Response $response, array $args) {
+
+    try{
+        $data = ['success' => false, 'msg' => 'Could not get data.', 'data' => []];
+        $statusCode = 404;
+        $query = $this->db->prepare("SELECT count(`score`) AS `scores` FROM `scores` WHERE `user_id` = :userId AND `game_id` = :gameId;");
+        $query->bindParam(':userId', $args['userId']);
+        $query->bindParam(':gameId', $args['gameId']);
+        $result = $query->execute();
+        $scores = $query->fetchAll();
+        if($result && $scores !== NULL){
+            $data = ['success' => true, 'msg' => 'Have some scores!', 'data' => ["scores"=>$scores]];
+            $statusCode = 200;
+        }
+
+        // Render index view
+        return $response->withJson($data, $statusCode);
+    } catch (Exception $e){
+        $data = ['success' => false, 'msg' => $e->getMessage(), 'data' => []];
+        $statusCode = 404;
+        return $response->withJson($data, $statusCode);
+    }
+});
+
 $app->post('/api/addGame', function(Request $request, Response $response, array $args){
     try{
         $data = ['success' => false, 'msg' => 'New Game not added.', 'data' => []];

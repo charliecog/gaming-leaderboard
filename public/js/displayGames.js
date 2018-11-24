@@ -52,6 +52,8 @@ function getUsers() {
             userList.forEach(function (user) {
                 user.addEventListener('click',function (e) {
                     console.log(e.target)
+                    let id = e.target.getAttribute('data-id')
+                    createScoreForm()
                 })
             })
         })
