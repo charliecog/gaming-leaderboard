@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    color: #719e40;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 100px;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+#games {
+    overflow: auto;
+}
+
+#users {
+    overflow: auto;
+}
+
+.infoBox {
+    height: 50px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 2px;
+    color: whitesmoke;
+    font-size: 2rem;
+}
+
+.game {
+    background-color: lightcoral;
+    float: left;
+}
+
+.user {
+    background-color: lightskyblue;
+    float: left;
+}
+
+#modal {
+    position: fixed;
+    top: 50px;
+    height: 80vh;
+    width: 80vw;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    display: none;
+}
+
+.userScore {
+    background-color: #c7254e;
+    margin: 0 auto;
+}
+
+.gameName {
+    font-size: 2.5rem;
+
+}

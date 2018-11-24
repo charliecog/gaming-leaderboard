@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/gameScores.js" defer></script>
+        <script src="js/displayGames.js" defer></script>
+        <script src="js/addNewGame.js" defer></script>
+        <script src="js/addNewUser.js" defer></script>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <style>
-            body {
-                margin: 50px 0 0 0;
-                padding: 0;
-                width: 100%;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                text-align: center;
-                color: #aaa;
-                font-size: 18px;
-            }
-
-            h1 {
-                color: #719e40;
-                letter-spacing: -3px;
-                font-family: 'Lato', sans-serif;
-                font-size: 100px;
-                font-weight: 200;
-                margin-bottom: 0;
-            }
-        </style>
+        <title>Gaming Leaderboard</title>
+        <link href="css/styles.css" type="text/css" rel="stylesheet">
     </head>
     <body>
+    <section id="modal">
+
+    </section>
+
         <h1>Gaming Leaderboard</h1>
-        <select>
-            <?php
-            foreach($data as $game){
-                echo '<option value="' . $game['id'] . '">' . $game['name'] . '</option>';
-            }
-            ?>
-        </select>
+        <h2>Games:</h2>
+        <div>
+            <label>Add a new game:</label>
+            <input id="addGame" type="text" />
+            <input id="submitGame" type="submit">
+        </div>
+        <section id="games">
+
+        </section>
+
+        <h2>Users:</h2>
+        <div>
+            <label>Add a new user:</label>
+            <input id="addUser" type="text" />
+            <input id="submitUser" type="submit">
+        </div>
+        <section id="users">
+
+        </section>
     </body>
 </html>
