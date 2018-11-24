@@ -27,9 +27,12 @@
     </head>
     <body>
         <h1>Gaming Leaderboard</h1>
-
-        <?php
-            var_dump($data);
-        ?>
+        <select>
+            <?php
+            foreach($data as $game){
+                echo '<option value="' . $game['id'] . '">' . $game['name'] . '</option>';
+            }
+            ?>
+        </select>
     </body>
 </html>
