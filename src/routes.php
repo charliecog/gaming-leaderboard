@@ -15,8 +15,8 @@ $app->get('/games', function (Request $request, Response $response, array $args)
 
         // Render index view
         return $this->renderer->render($response, 'index.phtml', $args);
-    } catch (e){
-        $args['error'] = e->getMessage();
+    } catch (Exception $e){
+        $args['error'] = $e->getMessage();
         return $this->renderer->render($response, 'error.phtml', $args);
     }
 });
