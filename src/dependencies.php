@@ -9,7 +9,7 @@ $container['renderer'] = function ($c) {
     return new Slim\Views\PhpRenderer($settings['template_path']);
 };
 
-$container['dbConnection'] = function ($c) {
+$container['db'] = function ($c) {
     $settings = $c->get('settings')['db'];
     $db = new PDO($settings['host'].$settings['dbName'], $settings['userName']);
     return $db;
